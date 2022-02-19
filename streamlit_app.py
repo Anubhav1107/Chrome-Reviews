@@ -7,6 +7,10 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
 model=joblib.load('Review_savemodel.mod')
+data=pd.read_csv('chrome_reviews(1).csv')
+#test_data=pd.DataFrame()
+#ref=pd.DataFrame()
+# creating object for PorterStemmer
 ps=PorterStemmer()
 
 def Review_classification(test):
@@ -46,14 +50,14 @@ def data_clean_step1(data_set):
 	return data_set
     
 def main():
-	st.title('Review classifier using NLP')
+	st.title('Review classifier using Natural Language Processing')
 	st.write('This app is to identify the reviews where the semantics of review text does not match rating.')
-
-	
+	st.write('We need to upload a "csv" file of following "format" to use the app and click on "Classify" button.')
+	st.write(data.head(4))
 	
 	html_temp="""
-    <div style="background-color:tomato;padding:4px;">
-    <h2 style="color:white;text-align:center;">Review classifier</h2>
+    <div style="background-color:tomato;padding:10px;">
+    <h2 style="color:white;text-align:center;">Review classifier using Natural Language Processing</h2>
     </div>
     """
 	st.markdown(html_temp,unsafe_allow_html=True)
