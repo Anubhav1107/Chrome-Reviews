@@ -46,9 +46,8 @@ def data_clean_step1(data_set):
 def main():
 	st.title('Review classifier using Natural Language Processing')
 	st.write('This app is to identify the reviews where the semantics of review text does not match rating.')
-	st.write('We need to upload a "csv" file of following "format" to use the app and click on "Classify" button.')
-	
-    	st.subheader("Select CSV file to classify reviews")
+	st.write('We need to upload a "csv" file of following "format" to use the app and click on "Classify" button.')	
+	st.subheader("Select CSV file to classify reviews")
 	filename = st.file_uploader("Upload a file", type=("csv"))
 	if filename is not None:
 		try:
@@ -68,3 +67,4 @@ def main():
 				st.write(result)
 		except:
 			st.error('Please choose a file')
+			
