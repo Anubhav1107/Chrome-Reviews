@@ -6,7 +6,7 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-model=joblib.load('Review_Savemodel.mod')
+model=joblib.load('Review_savemodel.mod')
 ps=PorterStemmer()
 
 def Review_classification(test):
