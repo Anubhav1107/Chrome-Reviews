@@ -52,8 +52,8 @@ def main():
 	
 	
 	html_temp="""
-    <div style="background-color:tomato;padding:10px;">
-    <h2 style="color:white;text-align:center;">Review classifier using Natural Language Processing</h2>
+    <div style="background-color:tomato;padding:4px;">
+    <h2 style="color:white;text-align:center;">Review classifier</h2>
     </div>
     """
 	st.markdown(html_temp,unsafe_allow_html=True)
