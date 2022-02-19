@@ -19,6 +19,7 @@ def Review_classification(test):
 	df=data_clean_step1(test)
 	X=df['Text'].values
 	y_pred=model.predict(X)
+	st.write("nani-kore34")
 	return y_pred
     
 # Writing method to clean data
@@ -73,6 +74,7 @@ def main():
 				ref_data=test_data.copy(deep=True)
 				st.write("nani-kore2")
 				y_pred=Review_classification(test_data)
+				st.write("nani-kore54")
 				review_ID=[]
 				for i in range(len(y_pred)):
 					if ( (y_pred[i]==1)and (ref_data['Star'][i]<2)):
