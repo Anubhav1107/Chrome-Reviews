@@ -65,6 +65,7 @@ def main():
 	st.subheader("Select CSV file to classify reviews")
 	filename = st.file_uploader("Upload a file", type=("csv"))
 	if filename is not None:
+		st.write("nani-kore")
 		try:
 			if st.button('Classify'):
 				test_data=pd.read_csv(filename)
