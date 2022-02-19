@@ -13,15 +13,6 @@ data=pd.read_csv('chrome_reviews(1).csv')
 # creating object for PorterStemmer
 ps=PorterStemmer()
 
-def Review_classification(test):
-	#test_data=pd.read_csv(filename)
-	#ref=pd.read_csv(filename)
-	df=data_clean_step1(test)
-	X=df['Text'].values
-	y_pred=model.predict(X)
-	st.write("nani-kore34")
-	return y_pred
-    
 # Writing method to clean data
 def data_clean_step1(data_set):
 	corpus=[]
@@ -49,6 +40,17 @@ def data_clean_step1(data_set):
 		data_set['Text'][i]=corpus[i]
 
 	return data_set
+
+def Review_classification(test):
+	#test_data=pd.read_csv(filename)
+	#ref=pd.read_csv(filename)
+	df=data_clean_step1(test)
+	X=df['Text'].values
+	y_pred=model.predict(X)
+	st.write("nani-kore34")
+	return y_pred
+    
+
     
 def main():
 	st.title('Review classifier using Natural Language Processing')
