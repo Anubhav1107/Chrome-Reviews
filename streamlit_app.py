@@ -6,7 +6,7 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-model=joblib.load('Review_savemodel.mod')
+model=joblib.load('Review_model.mod')
 data=pd.read_csv('chrome_reviews(1).csv')
 #test_data=pd.DataFrame()
 #ref=pd.DataFrame()
