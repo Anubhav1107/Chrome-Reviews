@@ -3,19 +3,21 @@ import joblib
 import pandas as pd
 import numpy as np
 import re
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-model=joblib.load('Review_savemodel.mod')
+
+model=joblib.load('Review_Savemodel.mod')
 ps=PorterStemmer()
 
 def Review_classification(test):
-
-    df=data_clean_step1(test)
-    X=df['Text'].values
-    y_pred=model.predict(X)
-    return y_pred
-
+	#test_data=pd.read_csv(filename)
+	#ref=pd.read_csv(filename)
+	df=data_clean_step1(test)
+	X=df['Text'].values
+	y_pred=model.predict(X)
+	return y_pred
+    
+# Writing method to clean data
 def data_clean_step1(data_set):
 	corpus=[]
 	for i in range(0,len(data_set)):
@@ -42,11 +44,20 @@ def data_clean_step1(data_set):
 		data_set['Text'][i]=corpus[i]
 
 	return data_set
-
+    
 def main():
 	st.title('Review classifier using Natural Language Processing')
 	st.write('This app is to identify the reviews where the semantics of review text does not match rating.')
-	st.write('We need to upload a "csv" file of following "format" to use the app and click on "Classify" button.')	
+	st.write('We need to upload a "csv" file of following "format" to use the app and click on "Classify" button.')
+	
+	
+	html_temp="""
+    <div style="background-color:tomato;padding:10px;">
+    <h2 style="color:white;text-align:center;">Review classifier using Natural Language Processing</h2>
+    </div>
+    """
+	st.markdown(html_temp,unsafe_allow_html=True)
+	
 	st.subheader("Select CSV file to classify reviews")
 	filename = st.file_uploader("Upload a file", type=("csv"))
 	if filename is not None:
@@ -68,3 +79,8 @@ def main():
 		except:
 			st.error('Please choose a file')
 			
+			
+  
+if __name__=='__main__':
+	main()
+    
