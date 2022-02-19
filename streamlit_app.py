@@ -46,9 +46,9 @@ def data_clean_step1(data_set):
 	return data_set
     
 def main():
-	st.title('Review classifier using Natural Language Processing')
+	st.title('Review classifier using NLP')
 	st.write('This app is to identify the reviews where the semantics of review text does not match rating.')
-	st.write('We need to upload a "csv" file of following "format" to use the app and click on "Classify" button.')
+
 	
 	
 	html_temp="""
