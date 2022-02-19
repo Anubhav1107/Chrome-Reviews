@@ -65,11 +65,13 @@ def main():
 	st.subheader("Select CSV file to classify reviews")
 	filename = st.file_uploader("Upload a file", type=("csv"))
 	if filename is not None:
-		st.write("nani-kore")
+		
 		try:
 			if st.button('Classify'):
+				st.write("nani-kore1")
 				test_data=pd.read_csv(filename)
 				ref_data=test_data.copy(deep=True)
+				st.write("nani-kore2")
 				y_pred=Review_classification(test_data)
 				review_ID=[]
 				for i in range(len(y_pred)):
